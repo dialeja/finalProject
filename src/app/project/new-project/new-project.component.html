@@ -1,0 +1,16 @@
+<form [formGroup]="projectForm" (ngSubmit)="save()" class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Name" type="text" formControlName="projectName" [(ngModel)]="project.name" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Team Size" type="number" formControlName="projectTeamSize" [(ngModel)]="project.teamSize" disabled/>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Customer" type="text" formControlName="projectCustomer" [(ngModel)]="project.customer  " />
+  </mat-form-field>
+  <mat-card-actions>
+    <button type="submit" mat-raised-button color="primary" *ngIf="!selectedProjectId" [disabled]="!projectForm.valid" style="float: left;">Save</button>
+    <button type="submit" mat-raised-button color="primary" *ngIf="selectedProjectId  " [disabled]="!projectForm.valid" style="float: left;">Edit</button>
+    <button type="button" mat-raised-button color="warn" (click)="cancel()" style="float: left;">Cancel</button>
+  </mat-card-actions>
+</form>

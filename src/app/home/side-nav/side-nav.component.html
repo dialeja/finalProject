@@ -1,0 +1,27 @@
+<mat-sidenav-container class="sidenav-container" (backdropClick)="close('backdrop')" >
+
+  <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose class="sidenav" fixedInViewport="true">
+    <p><button mat-button (click)="close('toggle button')">Cerrar</button></p>
+    <mat-nav-list>
+        <a mat-list-item routerLink="/home">Home</a>
+        <a mat-list-item routerLink="/employee/list">Employees</a>
+        <a mat-list-item routerLink="/project/list">Projects</a>
+        <a mat-list-item routerLink="/authentication/logout" (click)=logout()>Logout</a>
+      </mat-nav-list>    
+  </mat-sidenav>
+
+  <mat-sidenav-content style="background-color:#3f51b5;color: aliceblue;">
+    <mat-toolbar>
+        <button 
+          type="button" 
+          aria-label="Toggle sidenav" 
+          mat-button
+          (click)="sidenav.open()">
+            <mat-icon aria-label="Side nav toggle icon">MENU</mat-icon>
+        </button>
+        <mat-card style="width: 100%;background-color:#3f51b5;">HR MANAGEMENT</mat-card>
+    </mat-toolbar>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

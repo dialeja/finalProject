@@ -1,0 +1,16 @@
+
+<div style="padding: 100px;text-align: center">
+    <h4>user:admin, pass:admin</h4>
+    <h3>LOGIN</h3>
+    <div style="max-width: 100%">
+    <form [formGroup]="loginForm" (ngSubmit)="login()"  class="example-container">
+        <mat-form-field>
+          <input matInput type="text" placeholder="Username" formControlName="username" [(ngModel)]="username"/>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" formControlName="password" [(ngModel)]="pass" placeholder="password"/>
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!loginForm.valid" style="float: left;">Login</button>
+      </form>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>
+  {{data.title}}
+</h2>
+<mat-dialog-content>
+  <h3>{{data.name}}</h3>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button type="button" color="primary" (click)="submit()">OK</button>
+  <button mat-button type="button" color="warn" mat-dialog-close>Cancelar</button>
+</mat-dialog-actions>
